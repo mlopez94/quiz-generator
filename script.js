@@ -21,7 +21,7 @@ var questions = [
     "Who has the most Defensive Player of the Year awards?",
     choices: ["Gary Payton", "Dwight Howard", "Dikembe Mutombo", "Ben Wallace"],
     answer: "Dikembe Mutombo",
-  };
+  },
 
 ];
 
