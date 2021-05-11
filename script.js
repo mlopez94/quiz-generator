@@ -14,7 +14,7 @@ var questions = [
     question:
     "Who led the NBA in steals during the 2019 regular season?",
     choices: ["Steph Curry", "Ben Simmons", "Patrick Beverly", "James Harden"],
-    answer: "parentheses",
+    answer: "James Harden",
   },
   {
     question:
