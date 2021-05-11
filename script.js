@@ -1,26 +1,26 @@
 var questions = [
   {
-    question: "Who is the all-time leader in points in NBA history:",
+    question: "Who is the all-time leader in points in NBA history?",
     choices: ["LeBron James", "Kareem Abdul-Jabbar", "Larry Bird", "Michael Jordan"],
     answer: "Kareem Abdul-Jabbar",
   },
   {
     question:
-      "The condition in an if / else statement is enclosed within ____.",
-    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+      "Who has the most NBA championships?",
+    choices: ["Bill Russell", "Lebron James", "Kareem Abdul-Jabbar", "Magic Johnson"],
+    answer: "Bill Russell",
+  },
+  {
+    question:
+    "Who led the NBA in steals during the 2019 regular season?",
+    choices: ["Steph Curry", "Ben Simmons", "Patrick Beverly", "James Harden"],
     answer: "parentheses",
   },
   {
     question:
-    "The condition in an if / else statement is enclosed within ____.",
-    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    answer: "parentheses",
-  },
-  {
-    question:
-    "The condition in an if / else statement is enclosed within ____.",
-    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    answer: "parentheses",
+    "Who has the most Defensive Player of the Year awards?",
+    choices: ["Gary Payton", "Dwight Howard", "Dikembe Mutombo", "Ben Wallace"],
+    answer: "Dikembe Mutombo",
   };
 
 ];
