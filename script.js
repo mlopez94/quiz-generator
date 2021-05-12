@@ -46,6 +46,7 @@ function endQuiz() {
   // var body = document.body;
   // body.innerHTML = "Game over, You scored " + correctCount;
   contentEl.textContent = "";
+  document.getElementById.textContent = "";
   enterName = document.createElement('p');
   enterName.textContent = "Please enter your name";
   enterName.classList.add("enter-name");
@@ -65,7 +66,8 @@ function endQuiz() {
   submitButton.addEventListener("click", storeName);
 
   // Setting high score to localstorage
-  localStorage.setItem("highscore", correctCount);
+ 
+
 
 }
 
@@ -142,14 +144,52 @@ function startQuiz() {
 }
 
 function storeName () {
-  localStorage.setItem("topScorer", JSON.stringify(inputField.value));
-  return;
+  newplayer = localStorage.setItem("newScorer", JSON.stringify(inputField.value));
+  localStorage.setItem("newScore", correctCount);
+  
+  if (localStorage.getItem("highScore") < correctCount || localStorage.getItem("highScore") == correctCount) {
+    localStorage.setItem("highScore", correctCount);
+    localStorage.setItem("topScorer", localStorage.getItem("newScorer"));
+  
+  } else {
+    // localStorage.setItem("newScorer", correctCount);
+  } 
+  submitButton.remove();
+  inputField.remove();
+  // Title for  player results
+  finalScore = document.createElement('h2');
+  finalScore.textContent = "";
+  finalScore.textContent = "Your Results";
+  finalScore.classList.add("title-content");
+  contentEl.appendChild(finalScore);
+
+  //
+  displayResults = document.createElement('p');
+  displayResults.textContent = "";
+  displayResults.textContent = "Player " + localStorage.getItem("newScorer") + " scored " + localStorage.getItem("newScore");
+  displayResults.classList.add("enter-name");
+  contentEl.appendChild(displayResults);
+
+  //Display high score results
+  topWinner = document.createElement('h2');
+  topWinner.textContent = "";
+  topWinner.textContent = "High Score";
+  topWinner.classList.add("title-content");
+  contentEl.appendChild(topWinner);
+
+  winnerResults = document.createElement('p');
+  winnerResults.textContent = "";
+  winnerResults.textContent = "Player " + localStorage.getItem("topScorer") + " scored " + localStorage.getItem("highScore");
+  winnerResults.classList.add("enter-name");
+  contentEl.appendChild(winnerResults);
+    
 }
 
 function disappear() {
   h2.remove();
   button.remove();
 }
+
 
 
 
