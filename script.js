@@ -46,17 +46,26 @@ function endQuiz() {
   // var body = document.body;
   // body.innerHTML = "Game over, You scored " + correctCount;
   contentEl.textContent = "";
+  enterName = document.createElement('p');
+  enterName.textContent = "Please enter your name";
+  enterName.classList.add("enter-name");
+  contentEl.appendChild(enterName);
+  
+  
   inputField = document.createElement('input');
   inputField.classList.add("input");
   inputField.setAttribute("type", "text");
   contentEl.appendChild(inputField);
 
-  enterName = document.createElement('p');
-  enterName.textContent = "Please enter your name";
-  enterName.classList.add("enter-name");
-  contentEl.appendChild(enterName);
+  submitButton = document.createElement('button');
+  submitButton.textContent = "Submit Name";
+  submitButton.setAttribute("id", "end-button");
+  contentEl.append(submitButton);
 
+  submitButton.addEventListener("click", storeName);
 
+  // Setting high score to localstorage
+  localStorage.setItem("highscore", correctCount);
 
 }
 
@@ -130,6 +139,11 @@ function startQuiz() {
 
   button.addEventListener("click", renderQuestion);
 
+}
+
+function storeName () {
+  localStorage.setItem("topScorer", JSON.stringify(inputField.value));
+  return;
 }
 
 function disappear() {
