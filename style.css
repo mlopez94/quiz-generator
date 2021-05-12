@@ -91,3 +91,8 @@ button:hover {
       color: darkblue;
       cursor: pointer;
   }
+
+  input {
+      padding: 5px;
+      margin-top: 25px;
+  }

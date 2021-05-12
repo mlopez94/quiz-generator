@@ -51,6 +51,12 @@ function endQuiz() {
   inputField.setAttribute("type", "text");
   contentEl.appendChild(inputField);
 
+  enterName = document.createElement('p');
+  enterName.textContent = "Please enter your name";
+  enterName.classList.add("enter-name");
+  contentEl.appendChild(enterName);
+
+
 
 }
 
