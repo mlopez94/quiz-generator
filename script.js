@@ -43,8 +43,15 @@ var intervalId;
 
 function endQuiz() {
   clearInterval(intervalId);
-  var body = document.body;
-  body.innerHTML = "Game over, You scored " + correctCount;
+  // var body = document.body;
+  // body.innerHTML = "Game over, You scored " + correctCount;
+  contentEl.textContent = "";
+  inputField = document.createElement('input');
+  inputField.classList.add("input");
+  inputField.setAttribute("type", "text");
+  contentEl.appendChild(inputField);
+
+
 }
 
 function updateTime() {
@@ -62,6 +69,7 @@ function renderQuestion() {
     return;
   }
   disappear();
+  document.getElementById('set-timer').textContent = "Time Left:";
   intervalId = setInterval(updateTime, 1000);
   
   questionEl.textContent = questions[questionIndex].question;
@@ -122,6 +130,8 @@ function disappear() {
   h2.remove();
   button.remove();
 }
+
+
 
 startQuiz();
 optionListEl.addEventListener("click", checkAnswer);
