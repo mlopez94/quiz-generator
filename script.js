@@ -1,3 +1,4 @@
+
 var questions = [
   {
     question: "Who is the all-time leader in points in NBA history?",
@@ -25,6 +26,10 @@ var questions = [
 
 ];
 
+
+
+
+var contentEl = document.querySelector("#button-div");
 var questionEl = document.querySelector("#question");
 var optionListEl = document.querySelector("#option-list");
 var questionResultEl = document.querySelector("#question-result");
@@ -33,7 +38,7 @@ var timerEl = document.querySelector("#timer");
 var questionIndex = 0;
 var correctCount = 0;
 
-var time = 20;
+var time = 30;
 var intervalId;
 
 function endQuiz() {
@@ -56,7 +61,7 @@ function renderQuestion() {
     updateTime();
     return;
   }
-
+  disappear();
   intervalId = setInterval(updateTime, 1000);
   
   questionEl.textContent = questions[questionIndex].question;
@@ -91,12 +96,32 @@ function checkAnswer(event) {
       correctCount++;
     } else {
       questionResultEl.textContent = "Incorrect";
-      time = time - 2;
+      time = time - 5;
       timerEl.textContent = time;
     }
   }
   setTimeout(nextQuestion, 2000);
 }
+function startQuiz() {
+  //h2
+  h2 = document.createElement('h2');
+  h2.textContent = "Welcome to the Quiz Generator";
+  h2.classList.add("title-content");
+  contentEl.appendChild(h2);
+//button
+  button = document.createElement('button');
+  button.textContent = "Start Game";
+  button.setAttribute("id", "start-button");
+  contentEl.append(button);
 
-renderQuestion();
+  button.addEventListener("click", renderQuestion);
+
+}
+
+function disappear() {
+  h2.remove();
+  button.remove();
+}
+
+startQuiz();
 optionListEl.addEventListener("click", checkAnswer);

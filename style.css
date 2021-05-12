@@ -1,5 +1,62 @@
-body {
-    background-color: cadetblue;
-    text-align: center;
-};
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
+body {
+    padding: 20px;
+    text-align: center;
+}
+
+
+header {
+    padding: 20px;
+    background-color: tomato;
+    background-position: cover;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 48px;
+}
+
+
+button {
+    margin-top: 20px;
+    line-height: 60px;
+    font-weight: bold;
+    padding: 0 40px;
+    background: salmon;
+    border: none;
+  }
+
+button:hover {
+    background: lightsalmon;
+    cursor: pointer;
+  }
+
+#option-list {
+    list-style: none;
+    text-align: center;
+    
+
+}
+
+#timer {
+    display: flex;
+    justify-content: left;
+}
+
+#option-list ul {
+    
+    list-style: none;
+    text-align: center;
+    padding: 5px;
+    margin-right: 30px;
+    width: 150px;
+    line-height: 60px;
+  }
