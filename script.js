@@ -40,7 +40,7 @@ var timerEl = document.querySelector("#timer");
 var questionIndex = 0;
 var correctCount = 0;
 
-var time = 30;
+var time = 45;
 var intervalId;
 
 function endQuiz() {
@@ -118,7 +118,7 @@ function checkAnswer(event) {
       correctCount++;
     } else {
       questionResultEl.textContent = "Incorrect";
-      time = time - 5;
+      time = time - 10;
       timerEl.textContent = time;
     }
   }

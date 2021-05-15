@@ -60,6 +60,7 @@ button:hover {
   justify-content: left;
   margin-top: 32px;
   margin-left: 40px;
+  font-size: 25px;
 }
 
 #option-list ul {
